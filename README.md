@@ -12,11 +12,9 @@ Github Repository Link
 
 要求所分析算数表达式由如下的文法产生。 
 
-E→ E+T | E–T | T 
-
-T→ T*F | T/F | F 
-
-F→ (E) | num 
+E -> E + T | E – T | T 
+T -> T * F | T / F | F 
+F -> ( E ) | num 
 
 ## 实验要求
 
