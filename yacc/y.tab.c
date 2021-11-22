@@ -1300,49 +1300,49 @@ yyreduce:
 
   case 3:
 #line 9 "expression.y"
-                {yyval = yyvsp[-2] + yyvsp[0]; printf("E -> E + T\n");}
+                {yyval = yyvsp[-2] + yyvsp[0]; printf("E -> E + T\nE = %d\n", yyval);}
 #line 1305 "y.tab.c"
     break;
 
   case 4:
 #line 10 "expression.y"
-                {yyval = yyvsp[-2] - yyvsp[0]; printf("E -> E - T\n");}
+                {yyval = yyvsp[-2] - yyvsp[0]; printf("E -> E - T\nE = %d\n", yyval);}
 #line 1311 "y.tab.c"
     break;
 
   case 5:
 #line 11 "expression.y"
-                {yyval = yyvsp[0]; printf("E -> T\n");}
+                {yyval = yyvsp[0]; printf("E -> T\nE = %d\n", yyval);}
 #line 1317 "y.tab.c"
     break;
 
   case 6:
 #line 13 "expression.y"
-                {yyval = yyvsp[-2] * yyvsp[0]; printf("T -> T * F\n");}
+                {yyval = yyvsp[-2] * yyvsp[0]; printf("T -> T * F\nT = %d\n", yyval);}
 #line 1323 "y.tab.c"
     break;
 
   case 7:
 #line 14 "expression.y"
-                {yyval = yyvsp[-2] / yyvsp[0]; printf("T -> T / F\n");}
+                {yyval = yyvsp[-2] / yyvsp[0]; printf("T -> T / F\nT = %d\n", yyval);}
 #line 1329 "y.tab.c"
     break;
 
   case 8:
 #line 15 "expression.y"
-                {yyval = yyvsp[0]; printf("T -> F\n");}
+                {yyval = yyvsp[0]; printf("T -> F\nT = %d\n", yyval);}
 #line 1335 "y.tab.c"
     break;
 
   case 9:
 #line 17 "expression.y"
-                {yyval = yyvsp[-1]; printf("F -> ( E )\n");}
+                {yyval = yyvsp[-1]; printf("F -> ( E )\nF = %d\n", yyval);}
 #line 1341 "y.tab.c"
     break;
 
   case 10:
 #line 18 "expression.y"
-                {yyval = yyvsp[0]; printf("F -> num\n");}
+                {yyval = yyvsp[0]; printf("F -> num\nF = %d\n", yyval);}
 #line 1347 "y.tab.c"
     break;
 

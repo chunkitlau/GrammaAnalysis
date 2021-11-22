@@ -8,10 +8,11 @@
 
 class GeneratingFormula{
 public:
+    GeneratingFormula();
     GeneratingFormula(std::string left, std::vector<std::string> right);
     std::string getLeft();
     std::vector<std::string> getRight();
-    void print();
+    std::string print();
     void push(std::stack<std::string> &stack);
 private:
     std::string _left;

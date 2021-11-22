@@ -9,11 +9,8 @@
 
 #include "generatingFormula.hpp"
 #include "gramma.hpp"
+#include "algorithm_4_2.hpp"
 
-#define DOLLAR "DOLLAR"
-
-std::map<std::string, int> token2num;
-
-std::string startSymble;
+void error();
 
 #endif

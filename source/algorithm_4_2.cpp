@@ -8,10 +8,10 @@ std::map<std::pair<std::string, std::string>, GeneratingFormula> construct(Gramm
             std::set<std::string> firstSet = gramma.getFirstSet(iter->getRight());
             for (std::set<std::string>::iterator tokenIter = firstSet.begin();
                 tokenIter != firstSet.end(); ++tokenIter) {
-                    if (gramma.isTerminator(*tokenIter)) {
+                    if (gramma.isTerminator(*tokenIter) && !gramma.isEpsilon(*tokenIter)) {
                         analyzeTable[{iter->getLeft(), *tokenIter}] = *iter;
                     }
-                    else if (gramma.isEpsilon(*tokenIter)){
+                    if (gramma.isEpsilon(*tokenIter)){
                         std::set<std::string> followSet = gramma.getFollowSet(iter->getLeft());
                         for (std::set<std::string>::iterator followTokenIter = followSet.begin();
                             followTokenIter != followSet.end(); ++followTokenIter) {
@@ -22,3 +22,13 @@ std::map<std::pair<std::string, std::string>, GeneratingFormula> construct(Gramm
         }
     return analyzeTable;
 }
+/*
+int main() {
+    Gramma gramma("./demo/arithmeticExpressionGramma1.txt");
+    std::map<std::pair<std::string, std::string>, GeneratingFormula> analyzeTable = construct(gramma);
+    for (std::map<std::pair<std::string, std::string>, GeneratingFormula>::iterator iter = analyzeTable.begin();
+        iter != analyzeTable.end(); ++iter) {
+            std::cout << "M[" << iter->first.first << "," << iter->first.second << "]=" << iter->second.print() << std::endl;
+        }
+}
+*/
